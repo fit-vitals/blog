@@ -13,24 +13,24 @@ export default function Home() {
     <div className="divide-y divide-gray-200">
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tailwindcss" />
-        <meta name="twitter:creator" content="@tailwindcss" />
-        <meta name="twitter:title" content="Blog – Tailwind CSS" />
-        <meta name="twitter:description" content="News content from the Tailwind CSS team." />
-        <meta name="twitter:image" content={`https://blog.tailwindcss.com${twitterCard}`} />
-        <meta property="og:url" content="https://blog.tailwindcss.com" />
+        <meta name="twitter:site" content="@fitvitals" />
+        <meta name="twitter:creator" content="@fitvitals" />
+        <meta name="twitter:title" content="Blog – Fit Vitals" />
+        <meta name="twitter:description" content="News content from the FitVitals team." />
+        <meta name="twitter:image" content={`https://fitvitals.dev/blog${twitterCard}`} />
+        <meta property="og:url" content="https://fitvitals.dev/blog" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Blog – Tailwind CSS" />
-        <meta property="og:description" content="News content from the Tailwind CSS team." />
-        <meta property="og:image" content={`https://blog.tailwindcss.com${twitterCard}`} />
-        <title>Blog – Tailwind CSS</title>
+        <meta property="og:title" content="Blog – Fit Vitals" />
+        <meta property="og:description" content="News content from the Fit Vitals team." />
+        <meta property="og:image" content={`https://fitvitals.dev/blog${twitterCard}`} />
+        <title>Blog – Fit Vitals</title>
       </Head>
       <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-        <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-          Latest
+        <h1 className="text-3xl leading-9 font-extrabold text-green-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          Learn Web Vitals
         </h1>
         <p className="text-lg leading-7 text-gray-500">
-          All the latest Tailwind CSS news, straight from the team.
+          Content focused on helping you improve the health of your Core Web Vitals.
         </p>
       </div>
       <ul className="divide-y divide-gray-200">
@@ -48,7 +48,7 @@ export default function Home() {
                   <div className="space-y-6">
                     <h2 className="text-2xl leading-8 font-bold tracking-tight">
                       <Link href={link}>
-                        <a className="text-gray-900">{meta.title}</a>
+                        <a className="text-green-900">{meta.title}</a>
                       </Link>
                     </h2>
                     <div className="prose max-w-none text-gray-500">
@@ -58,7 +58,7 @@ export default function Home() {
                   <div className="text-base leading-6 font-medium">
                     <Link href={link}>
                       <a
-                        className="text-teal-500 hover:text-teal-600"
+                        className="text-green-500 hover:text-green-600"
                         aria-label={`Read "${meta.title}"`}
                       >
                         Read more &rarr;

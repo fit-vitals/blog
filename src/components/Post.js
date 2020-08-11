@@ -25,18 +25,18 @@ export default function Post({ meta, children, posts }) {
   return (
     <article className="xl:divide-y xl:divide-gray-200">
       <Head>
-        <title>{meta.title} – Tailwind CSS</title>
+        <title>{meta.title} – Fit Vitals</title>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tailwindcss" />
-        <meta name="twitter:creator" content="@tailwindcss" />
-        <meta name="twitter:title" content={`${meta.title} – Tailwind CSS`} />
+        <meta name="twitter:site" content="@fitvitals" />
+        <meta name="twitter:creator" content="@fitvitals" />
+        <meta name="twitter:title" content={`${meta.title} – Fit Vitals`} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={`https://blog.tailwindcss.com${meta.image}`} />
-        <meta property="og:url" content={`https://blog.tailwindcss.com${router.pathname}`} />
+        <meta name="twitter:image" content={`https://blog.fitvitals.dev${meta.image}`} />
+        <meta property="og:url" content={`https://blog.fitvitals.dev${router.pathname}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${meta.title} – Tailwind CSS`} />
+        <meta property="og:title" content={`${meta.title} – Fit Vitals`} />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={`https://blog.tailwindcss.com${meta.image}`} />
+        <meta property="og:image" content={`https://blog.fitvitals.dev${meta.image}`} />
       </Head>
       <header className="pt-6 xl:pb-10">
         <div className="space-y-1 text-center">
@@ -66,12 +66,12 @@ export default function Post({ meta, children, posts }) {
                   <img src={author.avatar} alt="" className="w-10 h-10 rounded-full" />
                   <dl className="text-sm font-medium leading-5 whitespace-no-wrap">
                     <dt className="sr-only">Name</dt>
-                    <dd className="text-gray-900">{author.name}</dd>
+                    <dd className="text-green-900">{author.name}</dd>
                     <dt className="sr-only">Twitter</dt>
                     <dd>
                       <a
                         href={`https://twitter.com/${author.twitter}`}
-                        className="text-teal-500 hover:text-teal-600"
+                        className="text-green-500 hover:text-green-600"
                       >
                         {author.twitter}
                       </a>
@@ -90,7 +90,10 @@ export default function Post({ meta, children, posts }) {
             <div className="pt-6 pb-16">
               <p>
                 Want to talk about this post?{' '}
-                <a href={meta.discussion} className="font-medium text-teal-500 hover:text-teal-600">
+                <a
+                  href={meta.discussion}
+                  className="font-medium text-green-500 hover:text-green-600"
+                >
                   Discuss this on GitHub &rarr;
                 </a>
               </p>
@@ -103,7 +106,7 @@ export default function Post({ meta, children, posts }) {
               {next && (
                 <div>
                   <h2 className="text-xs tracking-wide uppercase text-gray-500">Next Article</h2>
-                  <div className="text-teal-500 hover:text-teal-600">
+                  <div className="text-green-500 hover:text-green-600">
                     <Link href={next.link}>
                       <a>{next.title}</a>
                     </Link>
@@ -115,7 +118,7 @@ export default function Post({ meta, children, posts }) {
                   <h2 className="text-xs tracking-wide uppercase text-gray-500">
                     Previous Article
                   </h2>
-                  <div className="text-teal-500 hover:text-teal-600">
+                  <div className="text-green-500 hover:text-green-600">
                     <Link href={previous.link}>
                       <a>{previous.title}</a>
                     </Link>
@@ -126,7 +129,7 @@ export default function Post({ meta, children, posts }) {
           )}
           <div className="pt-8">
             <Link href="/">
-              <a className="text-teal-500 hover:text-teal-600">&larr; Back to the blog</a>
+              <a className="text-green-500 hover:text-green-600">&larr; Back to the blog</a>
             </Link>
           </div>
         </footer>

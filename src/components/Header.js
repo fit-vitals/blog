@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-function TailwindMark({ className }) {
+function Mark({ className }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 55 33">
       <path fill="#fff" d="M0 0h55v33H0z" />
@@ -14,7 +14,7 @@ function TailwindMark({ className }) {
   )
 }
 
-function TailwindLogo({ className }) {
+function Logo({ className }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 285 33">
       <path
@@ -40,15 +40,16 @@ export default function Header() {
     <header className="flex justify-between items-center py-10">
       <div>
         <Link href="/">
-          <a aria-label="Tailwind CSS Blog">
-            <TailwindMark className="h-6 sm:hidden" />
-            <TailwindLogo className="hidden sm:block h-6" />
+          <a aria-label="Fit Vitals Blog">
+            {/* <Mark className="h-6 sm:hidden" />
+            <Logo className="hidden sm:block h-6" /> */}
+            <img src="/fit-vitals.png" className="h-8 md:h-10" />
           </a>
         </Link>
       </div>
       <div className="text-base leading-5">
-        <a href="https://tailwindcss.com" className="font-medium text-gray-500 hover:text-gray-700">
-          Documentation &rarr;
+        <a href="https://fitvitals.dev" className="font-medium text-gray-500 hover:text-gray-700">
+          Get started &rarr;
         </a>
       </div>
     </header>

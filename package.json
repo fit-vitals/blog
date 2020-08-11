@@ -1,12 +1,12 @@
 {
-  "name": "tailwind-blog",
+  "name": "fitvitals-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && npm run build:rss",
+    "build": "next build && next export",
     "start": "next start",
-    "build:rss": "node ./.next/server/scripts/build-rss.js"
+    "build:rss": "node ./.next/server/scripts/build-rss.js && cp "
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
@@ -15,7 +15,8 @@
     "@tailwindcss/typography": "^0.1.2",
     "@tailwindcss/ui": "^0.3.0",
     "autoprefixer": "^9.8.4",
-    "next": "9.4.4",
+    "next": "^9.5.1",
+    "next-google-fonts": "^1.2.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tailwindcss": "^1.6.0",

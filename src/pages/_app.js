@@ -2,6 +2,7 @@ import '@/css/tailwind.css'
 import Head from 'next/head'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
+import GoogleFonts from 'next-google-fonts'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </Head>
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
       <SectionContainer>
         <Header />
       </SectionContainer>
