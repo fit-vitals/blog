@@ -2,7 +2,6 @@ import tinytime from 'tinytime'
 import Link from 'next/link'
 import Head from 'next/head'
 import getAllPostPreviews from '@/getAllPostPreviews'
-import twitterCard from '@/img/twitter-card.jpg'
 
 const posts = getAllPostPreviews()
 
@@ -17,12 +16,12 @@ export default function Home() {
         <meta name="twitter:creator" content="@fitvitals" />
         <meta name="twitter:title" content="Blog – Fit Vitals" />
         <meta name="twitter:description" content="News content from the FitVitals team." />
-        <meta name="twitter:image" content={`https://fitvitals.dev/blog${twitterCard}`} />
+        <meta name="twitter:image" content={`https://fitvitals.dev/blog/twitter-card.png`} />
         <meta property="og:url" content="https://fitvitals.dev/blog" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Blog – Fit Vitals" />
         <meta property="og:description" content="News content from the Fit Vitals team." />
-        <meta property="og:image" content={`https://fitvitals.dev/blog${twitterCard}`} />
+        <meta property="og:image" content={`https://fitvitals.dev/blog/twitter-card.png`} />
         <title>Blog – Fit Vitals</title>
       </Head>
       <div className="pt-6 pb-8 space-y-2 md:space-y-5">

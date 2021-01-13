@@ -4,8 +4,8 @@ import getAllPostPreviews from '../src/getAllPostPreviews'
 
 const feed = new RSS({
   title: 'Blog – Fit Vitals',
-  site_url: 'https://blog.fitvitals.dev',
-  feed_url: 'https://blog.fitvitals.dev/feed.xml',
+  site_url: 'https://fitvitals.dev/blog',
+  feed_url: 'https://fitvitals.dev/blog/feed.xml',
 })
 
 getAllPostPreviews().forEach(({ link, module: { meta } }) => {

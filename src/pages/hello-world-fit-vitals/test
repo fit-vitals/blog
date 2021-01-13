@@ -1,14 +1,3 @@
-import { drewbredvick } from '@/authors'
-import image from './card.jpg'
-
-export const meta = {
-  title: 'Why collecting Core Web Vitals is better than Lighthouse audits',
-  description: ``,
-  date: '2020-08-10T18:05:31Z',
-  authors: [drewbredvick],
-  image,
-}
-
 <!--more-->
 
 ## Choosing a platform

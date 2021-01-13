@@ -24,6 +24,7 @@ module.exports = withBundleAnalyzer({
   experimental: {
     modern: true,
   },
+  basePath: '/blog',
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
@@ -31,7 +32,7 @@ module.exports = withBundleAnalyzer({
         {
           loader: 'file-loader',
           options: {
-            publicPath: '/_next',
+            publicPath: '/blog/_next',
             name: 'static/media/[name].[hash].[ext]',
           },
         },

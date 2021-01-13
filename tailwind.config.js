@@ -31,10 +31,10 @@ module.exports = {
         '9/16': '56.25%',
       },
       lineHeight: {
-        '11': '2.75rem',
-        '12': '3rem',
-        '13': '3.25rem',
-        '14': '3.5rem',
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -101,7 +101,7 @@ module.exports = {
             fontStyle: 'normal',
             fontNamedInstance: 'Regular',
             fontDisplay: 'swap',
-            src: 'url("/fonts/Inter-roman.var-latin.woff2?3.13") format("woff2")',
+            src: 'url("/blog/fonts/Inter-roman.var-latin.woff2?3.13") format("woff2")',
           },
         },
         {
@@ -111,7 +111,7 @@ module.exports = {
             fontStyle: 'italic',
             fontNamedInstance: 'Italic',
             fontDisplay: 'swap',
-            src: 'url("/fonts/Inter-italic.var-latin.woff2?3.13") format("woff2")',
+            src: 'url("/blog/fonts/Inter-italic.var-latin.woff2?3.13") format("woff2")',
           },
         },
       ])

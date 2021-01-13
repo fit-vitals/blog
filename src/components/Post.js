@@ -14,8 +14,6 @@ const mdxComponents = {
   ),
 }
 
-const postDateTemplate = tinytime('{dddd}, {MMMM} {DD}, {YYYY}')
-
 export default function Post({ meta, children, posts }) {
   const router = useRouter()
   const postIndex = posts.findIndex((post) => post.link === router.pathname)
@@ -25,18 +23,19 @@ export default function Post({ meta, children, posts }) {
   return (
     <article className="xl:divide-y xl:divide-gray-200">
       <Head>
-        <title>{meta.title} – Fit Vitals</title>
+        <title>{meta.title}</title>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@fitvitals" />
-        <meta name="twitter:creator" content="@fitvitals" />
-        <meta name="twitter:title" content={`${meta.title} – Fit Vitals`} />
+        <meta name="twitter:site" content="@fitvitalsdev" />
+        <meta name="twitter:creator" content="@fitvitalsdev" />
+        <meta name="twitter:title" content={`${meta.title}`} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={`https://blog.fitvitals.dev${meta.image}`} />
-        <meta property="og:url" content={`https://blog.fitvitals.dev${router.pathname}`} />
+        <meta name="twitter:image" content={`https://fitvitals.dev${meta.image}`} />
+        <meta property="og:url" content={`https://fitvitals.dev${router.pathname}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${meta.title} – Fit Vitals`} />
+        <meta property="og:title" content={`${meta.title}`} />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={`https://blog.fitvitals.dev${meta.image}`} />
+        <meta property="og:image" content={`https://fitvitals.dev${meta.image}`} />
+        <meta name="author" content={meta?.author?.name} />
       </Head>
       <header className="pt-6 xl:pb-10">
         <div className="space-y-1 text-center">
@@ -44,7 +43,9 @@ export default function Post({ meta, children, posts }) {
             <div>
               <dt className="sr-only">Published on</dt>
               <dd className="text-base leading-6 font-medium text-gray-500">
-                <time dateTime={meta.date}>{postDateTemplate.render(new Date(meta.date))}</time>
+                <time dateTime={meta.date}>
+                  {tinytime('{dddd}, {MMMM} {DD}, {YYYY}').render(new Date(meta.date))}
+                </time>
               </dd>
             </div>
           </dl>
@@ -57,7 +58,7 @@ export default function Post({ meta, children, posts }) {
         className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20"
         style={{ gridTemplateRows: 'auto 1fr' }}
       >
-        <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200">
+        <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200">
           <dt className="sr-only">Authors</dt>
           <dd>
             <ul className="flex justify-center xl:block space-x-8 sm:space-x-12 xl:space-x-0 xl:space-y-8">
@@ -66,7 +67,7 @@ export default function Post({ meta, children, posts }) {
                   <img src={author.avatar} alt="" className="w-10 h-10 rounded-full" />
                   <dl className="text-sm font-medium leading-5 whitespace-no-wrap">
                     <dt className="sr-only">Name</dt>
-                    <dd className="text-green-900">{author.name}</dd>
+                    <dd className="text-gray-900">{author.name}</dd>
                     <dt className="sr-only">Twitter</dt>
                     <dd>
                       <a
@@ -82,23 +83,8 @@ export default function Post({ meta, children, posts }) {
             </ul>
           </dd>
         </dl>
-        <div className="divide-y divide-gray-200 xl:pb-0 xl:col-span-3 xl:row-span-2">
-          <div className="prose max-w-none pt-10 pb-8">
-            <MDXProvider components={mdxComponents}>{children}</MDXProvider>
-          </div>
-          {meta.discussion && (
-            <div className="pt-6 pb-16">
-              <p>
-                Want to talk about this post?{' '}
-                <a
-                  href={meta.discussion}
-                  className="font-medium text-green-500 hover:text-green-600"
-                >
-                  Discuss this on GitHub &rarr;
-                </a>
-              </p>
-            </div>
-          )}
+        <div className="prose py-10 xl:pb-0 xl:col-span-3 xl:row-span-2">
+          <MDXProvider components={mdxComponents}>{children}</MDXProvider>
         </div>
         <footer className="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2">
           {(next || previous) && (

@@ -1,0 +1,111 @@
+import { drewbredvick } from '@/authors'
+import image from './card.png'
+
+export const meta = {
+  title: 'Fit Vitals: Track and improve your Core Web Vitals today, no code required.',
+  description: ``,
+  date: '2021-01-10T12:05:31Z',
+  authors: [drewbredvick],
+  image,
+}
+
+## Core Web Vitals
+
+Google introduced a new way to monitor your website performance [back in May 2020](https://developers.google.com/search/blog/2020/05/evaluating-page-experience), **Core Web Vitals**.
+
+They aren't used in ranking your site yet, but will be [beginning May 2021](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
+
+While some of the metrics align quite a bit with existing Lighthouse metrics, Core Web Vitals are different on a few major points:
+
+1. they are collected in the field
+2. they are representative of your users
+3. they encourage alignment between developers, designers, marketers, and SEOs
+
+These metrics include:
+
+- Cumulative Layout Shift ([CLS](https://learn.fitvitals.dev/metrics/cls))
+- Largest Contentful Paint ([LCP](https://learn.fitvitals.dev/metrics/lcp))
+- First Input Delay ([FID](https://learn.fitvitals.dev/metrics/fid))
+
+Google hasn't said exactly how important these metrics will be for considering Page Rank, but we can learn a little bit from their [Lighthouse 6](https://web.dev/performance-scoring/#lighthouse-6) audit weights:
+
+| Metric                                                                                                                                                                                     |                                 Weight                                  |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------: |
+| First Contentful Paint                                                                                                                                                                     |                                   15%                                   |
+| Speed Index                                                                                                                                                                                |                                   15%                                   |
+| <span style={{backgroundColor:"yellow", fontWeight: "bold"}}>Largest Contentful Paint</span>                                                                                               | <span style={{backgroundColor:"yellow", fontWeight: "bold"}}>25%</span> |
+| <span style={{backgroundColor:"yellow", fontWeight: "bold"}}>Time to Interactive</span> ([related to First Input Delay](https://web.dev/interactive/#tracking-tti-on-real-users'-devices)) | <span style={{backgroundColor:"yellow", fontWeight: "bold"}}>15%</span> |
+| Total Blocking Time                                                                                                                                                                        |                                   25%                                   |
+| <span style={{backgroundColor:"yellow", fontWeight: "bold"}}>Cumulative Layout Shift</span>                                                                                                | <span style={{backgroundColor:"yellow", fontWeight: "bold"}}>5%</span>  |
+
+Because TTI so [closely mirrors](https://web.dev/interactive/#tracking-tti-on-real-users'-devices) First Input Delay, **Core Web Vitals are 45% of your Lighthouse score**.
+
+This doesn't account for the fact that if your LCP, FID, and CLS are in great shape, the rest of your Lighthouse audit will likely be too.
+
+## Why are Core Web Vitals better?
+
+> When compared to previous performance metrics, Core Web Vitals provide more accurate data, encourage alignment between teams, and enable better performance analytics. – [drew.tech](https://drew.tech/the-ripple-of-web-vitals) (me)
+
+**If orgainc search traffic is important for your business, Core Web Vitals need to be at the top of your 2021 roadmap.**
+
+---
+
+## How to track Core Web Vitals
+
+Because Core Web Vitals are tracked in the field, they need to be measured on actual user devices.
+
+This means testing them in a Lighthouse audit **doesn't count**.
+
+So how can we actually track them? I made a guide of [how to track web vitals](https://learn.fitvitals.dev/tracking-core-web-vitals) that covers your options:
+
+1. PageSpeed Insights reports [link](https://developers.google.com/speed/pagespeed/insights/)
+2. A Chrome Extension [link](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)
+3. Google Search Console [link](https://search.google.com/search-console)
+4. DIY tracking
+
+Each of these options is a step in the right direction, but none of them are perfect. The best option is DIY tracking, where you manually collect these metrics yourself for each visitor of your website.
+
+After you collect the data, you send it to an analytics tool (Google Analytics, Segment, etc.) and analyze your data. If you have a custom back end, you could build your own Slack alerting and monitoring based on this data.
+
+**The tricky part with a DIY soclution is the amount of data starts to add up fast.**
+
+Each pageview will result in at least 4 data points.
+
+You can send these to Google Analytics, but be sure you don't go over your [custom event limit](https://developers.google.com/analytics/devguides/collection/analyticsjs/limits-quotas) as Google doesn't guarentee accuracy on additional events and charges overages.
+
+If you want to go the custom route, head to the DIY Tracking section in our Learn section for [How to Track Web Vitals](https://learn.fitvitals.dev/tracking-core-web-vitals).
+
+## Tracking Core Web Vitals the easy way
+
+Because none of the options above are perfect & DIY tracking is difficult, I wanted to build a tool that:
+
+1. Kept me on top of my Web Vitals all the time
+2. Could integrate with Slack
+3. Would email my boss a monthly progress reports
+4. Used lab data (real world data)
+5. Was platform and code agnostic
+
+I searched everywhere for a tool that could do this and found nothing that fit all of these criteria.
+
+There were a few good options (Vercel Analytics, Google Search Console, Calibre), but they all fell short on at least one dimension.
+
+## FitVitals
+
+FitVitals is a tool built on top of the Google CrUX API (which uses real user monitoring) to alert you and your team when your performance slips.
+
+![fit vitals graph](https://fitvitals.dev/screenshot.png)
+
+We track:
+
+- First Contentful Paint
+- Largest Contentful Paint
+- First Input Delay
+- Cumulative Layout Shift
+
+We build reports and alerts to send to both your **email inbox** & your **Slack channels**.
+
+### FitVitals free trial
+
+If you're interested in a tool that requires zero coding to monitor your Core Web Vitals and keep your team on top of performance issues, sign up for a [free trial](https://getstarted.fitvitals.dev/) of FitVitals.
+
+Email me at <a href="mailto:drew@fitvitals.dev?subject=FitVitals%20trial%20request">drew@fitvitals.dev</a> if you're interested in learning how FitVitals can help your business stay on top of your performance and SEO in 2021.
