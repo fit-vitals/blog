@@ -8,6 +8,12 @@ export default function App({ Component, pageProps }) {
   return (
     <div className="antialiased">
       <Head>
+        <script
+          async
+          defer
+          data-website-id="9eb6abaf-5daa-4b7c-b295-1d4b2befad29"
+          src="https://data.drew.tech/umami.js"
+        ></script>
         <link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png" />
